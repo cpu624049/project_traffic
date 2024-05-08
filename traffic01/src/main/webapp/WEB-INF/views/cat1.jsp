@@ -1,30 +1,35 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: J
-  Date: 2024-05-07
-  Time: 오전 10:18
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<c:set var="path" value="${pageContext.request.contextPath}"/>
 <html>
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 <head>
 	<meta charset="UTF-8">
-    <title>Main</title>
+	<link rel="stylesheet" href="resources/css/cat1.css">
+    <title>Traffic Category 1</title>
 </head>
+<jsp:include page="layout/header.jsp" />
 <body>
-<jsp:include page="../layout/header.jsp" />
+<div class="body_section">
+	<jsp:include page="layout/side_left.jsp" />
+	
+	    <div id="map"></div>
+	    
+	<jsp:include page="layout/side_right.jsp" />
+</div>
+
+
+<!-- Script -->
+
 	<!-- JavaScript Key -->
 	<!-- c7487984efed303effe7e29917b7de05 -->
-    <div>body</div>
-    <div id="map" style="width:500px;height:400px;"></div>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c7487984efed303effe7e29917b7de05"></script>
     
    	<script>
+	   	const rect = document.querySelector('div').getBoundingClientRect();
+	   	console.log(rect);
+	   	
 		var container = document.getElementById('map');
 		var options = {
 			center: new kakao.maps.LatLng(33.450701, 126.570667),
@@ -86,4 +91,5 @@
 		}
 	</script>
 </body>
+<jsp:include page="layout/footer.jsp" />
 </html>

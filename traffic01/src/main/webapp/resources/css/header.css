@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body{
+header, body{
 	margin: 0;
 	padding: 0;
 }
@@ -8,6 +8,13 @@ body{
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	height: 150px;
+	height: 99px;
 	border-bottom: 1px solid black;
+	text-align: center;
+}
+.header_logo{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 50px;
 }

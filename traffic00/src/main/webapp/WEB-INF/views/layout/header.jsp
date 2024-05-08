@@ -11,7 +11,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <html>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="/layoutCSS/header.css">
+<link rel="stylesheet" href="/resources/css/header.css">
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 <body>

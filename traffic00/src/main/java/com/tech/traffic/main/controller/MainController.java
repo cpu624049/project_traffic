@@ -19,7 +19,7 @@ public class MainController {
 		
 		model.addAttribute("request", request);
 		
-		return "body/main";
+		return "main/main";
 	}
 	
 	@RequestMapping("main")

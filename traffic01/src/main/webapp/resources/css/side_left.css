@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.side_left_wrap{
+	width: 299px;
+	height: 720px;
+	border-right: 1px solid black;
+}
