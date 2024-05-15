@@ -13,32 +13,32 @@
 <div class="body_section">
 	<jsp:include page="layout/side_left.jsp" />
 	
-	    <div id="map"></div>
-	    <div class="color_info" id="ColorInfo"> 도로 색상 정보 </div>
-	    <div class="info_wrap" id="InfoWrap">
-	    	<div class="date_wrap">
-		    	<div class="current_date" id="CurrentDate"></div>
-		    	<div class="date_1"> 기준 </div>
-	    		<div id="CloseButton">
-	    			<i class="fa-solid fa-xmark"></i>
-	    		</div>
-	    	</div>
-	    	<hr />
-	    	<div class="color_wrap">
-	    		<div class="green"></div>
-	    		<div class="yellow"></div>
-	    		<div class="orange"></div>
-	    		<div class="red"></div>
-	    	</div>
-	    	<div class="color_name_wrap">
-	    		<div class="name_green"> 원활 </div>
-	    		<div class="name_yellow"> 서행 </div>
-	    		<div class="name_orange"> 지체 </div>
-	    		<div class="name_red"> 정체 </div>	    		
-	    	</div>
-	    	<hr />
-	    	<div class="ps"> 시내 도로는 신호 정차 등의 이유로 실제 속도와 다를 수 있습니다. </div>
-	    </div>
+    <div id="map"></div>
+    <div class="color_info" id="ColorInfo"> 도로 색상 정보 </div>
+    <div class="info_wrap" id="InfoWrap">
+    	<div class="date_wrap">
+	    	<div class="current_date" id="CurrentDate"></div>
+	    	<div class="date_1"> 기준 </div>
+    		<div id="CloseButton">
+    			<i class="fa-solid fa-xmark"></i>
+    		</div>
+    	</div>
+    	<hr />
+    	<div class="color_wrap">
+    		<div class="green"></div>
+    		<div class="yellow"></div>
+    		<div class="orange"></div>
+    		<div class="red"></div>
+    	</div>
+    	<div class="color_name_wrap">
+    		<div class="name_green"> 원활 </div>
+    		<div class="name_yellow"> 서행 </div>
+    		<div class="name_orange"> 지체 </div>
+    		<div class="name_red"> 정체 </div>	    		
+    	</div>
+    	<hr />
+    	<div class="ps"> 시내 도로는 신호 정차 등의 이유로 실제 속도와 다를 수 있습니다. </div>
+    </div>
 	    
 	<jsp:include page="layout/side_right.jsp" />
 </div>

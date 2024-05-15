@@ -12,7 +12,12 @@
 </head>
 <header>
     <div class="header_wrap">
-        <div class="header_logo"> Header </div>
+       	<div class="logo_img">
+        	<img src="resources/img/logo_hat_hammer.jpg" alt="#" onclick="location.href='/traffic01'" />
+       	</div>
+        <div class="header_name">
+        	<a href="/traffic01"> Traffic Info </a>
+        </div>
     </div>
 </header>
 <body>

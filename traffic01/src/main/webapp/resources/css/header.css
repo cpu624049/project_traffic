@@ -7,14 +7,44 @@ header, body{
 .header_wrap{
 	margin: 0;
 	padding: 0;
+	padding-left: 40%;
 	width: 100%;
-	height: 99px;
+	height: 100px;
 	border-bottom: 1px solid black;
 	text-align: center;
+	align-items: center;
+	display: flex;
 }
-.header_logo{
+.header_name{
 	margin: 0;
+	margin-left: 20px;
 	padding: 0;
 	text-align: center;
 	font-size: 50px;
+	font-weight: bold;
+}
+
+.header_name a{
+	text-decoration: none;
+	color: black;
+}
+
+.header_name:hover{
+	cursor: pointer;
+}
+
+.logo_img{
+	width: 80px;
+	height: 80px;
+}
+
+.logo_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   	object-position: center;
+}
+
+.logo_img:hover{
+	cursor: pointer;
 }

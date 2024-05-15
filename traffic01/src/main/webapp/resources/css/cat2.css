@@ -1,1 +1,48 @@
 @charset "UTF-8";
+@font-face {
+ font-family: 'MaruBuri-Regular';
+ src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+ font-weight: normal;
+ font-style: normal;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.body_section{
+	display: flex;
+}
+
+#map{
+	margin: 5px 5px 5px 5px;
+	width: 1310px;
+	height: 707px;
+}
+
+.area {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #888;
+    border-radius: 3px;
+    font-size: 12px;
+    top: -5px;
+    left: 15px;
+    padding:2px;
+}
+
+.info {
+    font-size: 12px;
+    padding: 5px;
+}
+.info .title {
+    font-weight: bold;
+}
+
+.district{
+	background-color: transparent;
+    font-family: 'MaruBuri-Regular';
+    font-size: 17px;
+	color: #1034a6;
+}
