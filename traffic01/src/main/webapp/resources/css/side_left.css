@@ -9,8 +9,37 @@ body{
 	width: 299px;
 	height: 717px;
 	border-right: 1px solid black;
+	background-color: #b1b8c0;
 }
 
+.cat{
+	margin: 20px 0 0 45px;
+	width: 200px;
+	height: 100px;
+	text-align: center;
+	background-color: #e2f0fe;
+	box-shadow: 0px 4px 4px 0px #1a1f27;
+}
+
+.cat:hover{
+	cursor: pointer;
+}
+
+.cat_title{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.title1{
+	transform: translateY(22px);
+}
+
+.title2{
+	transform: translateY(8px);
+}
+.title3{
+	transform: translateY(22px);
+}
 .dropdown {
     position: relative;
     display: inline-block;

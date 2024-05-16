@@ -17,7 +17,7 @@
 
     <div id="map"></div>
 	    
-	<jsp:include page="layout/side_right.jsp" />
+	<jsp:include page="layout/side_right_2.jsp" />
 </div>
 
 <!-- Script -->
@@ -83,7 +83,7 @@
 	        height: 256,
 	        getTile: function(x, y, z) {
 	            var div = document.createElement('div');
-	            	div.style.background = '#b1b8c0';
+	            	div.style.background = '#e2f0fe';
 	            return div;
 	        }
 	    }));
@@ -113,9 +113,31 @@
 	    });
 	    
 		var districts = {
-		    "강남구": { latitude: 37.5172, longitude: 127.0473 },
-		    "강동구": { latitude: 37.5304, longitude: 127.1238 }
-		    // 다른 자치구들의 좌표도 추가할 수 있습니다.
+		    "강남구": { latitude: 37.4927, longitude: 127.0623 },
+		    "강동구": { latitude: 37.5512, longitude: 127.1475 },
+		    "강북구": { latitude: 37.6328, longitude: 127.0164 },
+		    "강서구": { latitude: 37.5655, longitude: 126.8230 },
+		    "관악구": { latitude: 37.4676, longitude: 126.9458 },
+		    "광진구": { latitude: 37.5457, longitude: 127.0859 },
+		    "구로구": { latitude: 37.4981, longitude: 126.8593 },
+		    "금천구": { latitude: 37.4610, longitude: 126.9010 },
+		    "노원구": { latitude: 37.6513, longitude: 127.0755 },
+		    "도봉구": { latitude: 37.6686, longitude: 127.0324 },
+		    "동대문구": { latitude: 37.5812, longitude: 127.0552 },
+		    "동작구": { latitude: 37.5054, longitude: 126.9444 },
+		    "마포구": { latitude: 37.5587, longitude: 126.9077 },
+		    "서대문구": { latitude: 37.5786, longitude: 126.9389 },
+		    "서초구": { latitude: 37.4913, longitude: 127.0091 },
+		    "성동구": { latitude: 37.5524, longitude: 127.0414 },
+		    "성북구": { latitude: 37.5942, longitude: 127.0244 },
+		    "송파구": { latitude: 37.5054, longitude: 127.1159 },
+		    "양천구": { latitude: 37.5183, longitude: 126.8542 },
+		    "영등포구": { latitude: 37.5224, longitude: 126.9081 },
+		    "용산구": { latitude: 37.5314, longitude: 126.9809 },
+		    "은평구": { latitude: 37.6193, longitude: 126.9283 },
+		    "종로구": { latitude: 37.5809, longitude: 126.9874 },
+		    "중구": { latitude: 37.5596, longitude: 126.9961 },
+		    "중랑구": { latitude: 37.5985, longitude: 127.0932 }
 		};
 		
 		// 각 자치구의 중앙 위치에 CustomOverlay 추가
@@ -137,7 +159,7 @@
 	    // 다각형에 mouseover 이벤트를 등록하고 이벤트가 발생하면 폴리곤의 채움색을 변경합니다 
 	    // 지역명을 표시하는 커스텀오버레이를 지도위에 표시합니다
 	    kakao.maps.event.addListener(polygon, 'mouseover', function(mouseEvent) {
-	        polygon.setOptions({fillColor: '#09f'});
+	        polygon.setOptions({fillColor: '#1e90ff'});
 
 	        customOverlay.setContent('<div class="area">' + area.name + '</div>');
 	        
