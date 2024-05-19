@@ -7,13 +7,89 @@ body{
 
 .body_section{
 	display: flex;
+	position: relative;
 }
 
-canvas {
-    border: 1px solid #000;
+.switch_button{
+	position: absolute;
+	top: 30px;
+	left: 400px;
+	width: 300px;
+	height: 50px;
+	display: flex;
 }
 
-#myCanvas{
-	width: 800px;
+.button1{
+	padding-top: 10px;
+	width: 148px;
+	height: 40px;
+	text-align: center;
+	background-color: #e2f0fe;
+	font-size: 20px;
+	font-weight: bold;
+	border-top: 1px solid #b1b8c0;
+	border-left: 1px solid #b1b8c0;
+	border-right: 1px solid #b1b8c0;	
+	z-index: 2;
+}
+
+.button1:hover{
+	cursor: pointer;
+}
+
+.button2{
+	padding-top: 10px;
+	width: 148px;
+	height: 40px;
+	text-align: center;
+	background-color: #e2f0fe;
+	font-size: 20px;
+	font-weight: bold;
+	z-index: 2;
+}
+
+.button2:hover{
+	cursor: pointer;
+}
+
+.content_wrap1{
+	position: absolute;
+	top: 80px;
+	left: 350px;
+	width: 1520px;
 	height: 600px;
+	background-color: #f9fafb;
+	z-index: 1;
+	border-top: 1px solid #b1b8c0;
+	display: flex;
+}
+
+.content1_1_wrap{
+	width: 350px;
+	height: 400px;
+}
+.content1_2_wrap{
+	width: 350px;
+	height: 400px;
+}
+.content1_3_wrap{
+	width: 350px;
+	height: 400px;
+}
+.content1_4_wrap{
+	width: 350px;
+	height: 400px;
+}
+
+.content_wrap2{
+	position: absolute;
+	top: 80px;
+	left: 350px;
+	width: 1520px;
+	height: 600px;
+	background-color: #f9fafb;
+	z-index: 1;
+	border-top: 1px solid #b1b8c0;
+	display: none;
+	display: flex;
 }

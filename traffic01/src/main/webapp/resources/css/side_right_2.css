@@ -23,7 +23,7 @@ body{
 }
 .wrap1{
 	width: 299px;
-	height: 668px;
+	height: 700px;
 	background-color: #f9fafb;
 	overflow: hidden;
 	overflow-Y: auto;
@@ -101,7 +101,7 @@ body{
 	margin: 0;
 	padding: 0;
 	width: 299px;
-	height: 250px;
+	height: 400px;
 	border-bottom: 1px solid #b1b8c0;
 }
 
