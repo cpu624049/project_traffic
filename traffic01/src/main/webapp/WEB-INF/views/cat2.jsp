@@ -155,6 +155,9 @@
 
 		    customOverlay.setMap(map);
 		}
+		
+	    // 클릭된 다각형을 추적하기 위한 변수
+	    var clickedPolygon = null;
 			
 	    // 다각형에 mouseover 이벤트를 등록하고 이벤트가 발생하면 폴리곤의 채움색을 변경합니다 
 	    // 지역명을 표시하는 커스텀오버레이를 지도위에 표시합니다
@@ -182,6 +185,7 @@
 
 	    // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다 
 	    kakao.maps.event.addListener(polygon, 'click', function(mouseEvent) {
+	    	
 	        var content = '<div class="info">' + 
 	                    '   <div class="title">' + area.name + '</div>' +
 	                    '   <div class="size">총 면적 : 약 ' + Math.floor(polygon.getArea()) + ' m<sup>2</sup></div>' +
@@ -190,6 +194,7 @@
 	        infowindow.setContent(content); 
 	        infowindow.setPosition(mouseEvent.latLng); 
 	        infowindow.setMap(map);
+
 	    });
 	}
 	

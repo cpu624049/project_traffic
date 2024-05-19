@@ -4,21 +4,29 @@ body, div{
 	margin: 0;
 	padding: 0;
 }
+
 .body_section{
 	transform: translateX(300px);
 	width: 1310px;
 	height: 720px;
+	display: inlink-block;
+}
+.body_img_section{
+	width: 1310px;
+	height: 520px;
 	display: flex;
 	justify-content: space-between;
 }
+
 .cat1{
 	position: relative;
 	margin-top: 135px;
 	width: 400px;
 	height: 400px;
-	background-color: gray;
+	background-color: #1e90ff;
 	text-align: center;
 }
+
 .cat1 img{
 	margin: 5px 5px 5px 5px;
 	width: 390px;
@@ -26,16 +34,19 @@ body, div{
 	object-fit: cover;
 	object-position: center;
 }
+
 .cat1 img:hover{
 	cursor: pointer;
 }
+
 .cat2{
 	position: relative;
 	margin-top: 135px;
 	width: 400px;
 	height: 400px;
-	background-color: gray;
+	background-color: #1e90ff;
 }
+
 .cat2 img{
 	margin: 5px 5px 5px 5px;
 	width: 390px;
@@ -43,16 +54,19 @@ body, div{
 	object-fit: cover;
 	object-position: center;
 }
+
 .cat2 img:hover{
 	cursor: pointer;
 }
+
 .cat3{
 	position: relative;
 	margin-top: 135px;
 	width: 400px;
 	height: 400px;
-	background-color: gray;
+	background-color: #1e90ff;
 }
+
 .cat3 img{
 	margin: 5px 5px 5px 5px;
 	width: 390px;
@@ -60,6 +74,62 @@ body, div{
 	object-fit: cover;
 	object-position: center;
 }
+
 .cat3 img:hover{
+	cursor: pointer;
+}
+
+.body_name_section{
+	width: 1310px;
+	height: 200px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.cat1_name{
+	position: relative;
+	padding-top: 20px;
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	background-color: #1e90ff;
+	color: white;
+}
+
+.cat1_name:hover{
+	cursor: pointer;
+}
+
+.cat2_name{
+	position: relative;
+	padding-top: 20px;
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	background-color: #1e90ff;
+	color: white;
+}
+
+.cat2_name:hover{
+	cursor: pointer;
+}
+
+.cat3_name{
+	position: relative;
+	padding-top: 20px;
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	background-color: #1e90ff;
+	color: white;
+}
+
+.cat3_name:hover{
 	cursor: pointer;
 }

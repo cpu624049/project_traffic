@@ -58,27 +58,148 @@ body{
 	left: 350px;
 	width: 1520px;
 	height: 600px;
-	background-color: #f9fafb;
+	background-color: #e2f0fe;
 	z-index: 1;
-	border-top: 1px solid #b1b8c0;
+	border: 1px solid #b1b8c0;
 	display: flex;
 }
 
 .content1_1_wrap{
+	margin-top: 50px;
+	margin-left: 24px;
 	width: 350px;
-	height: 400px;
+	height: 500px;
+	background-color: #f9fafb;
+}
+
+.title1_1{
+	margin-top: 10px;
+	width: 350px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.top5_1_1{
+	margin-top: 10px;
+	padding-top: 15px;
+	width: 350px;
+	height: 45px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	background-color: #1e90ff;
+}
+
+.rank1_1{
+	margin-top: 20px;
+	padding-left: 20px;
+	width: 330px;
+	height: 55px;
+	border-bottom: 1px solid #b1b8c0;
+	font-size: 40px;
+	font-weight: bold;
+	display: flex;
+}
+
+.rank1_1_name{
+	margin-left: 10px;
+	font-size: 40px;
+	font-weight: bold;
+	transform: translateY(-9px);
+}
+
+.rank1_1_cnt{
+	margin-left: 60px;
+	font-size: 40px;
+	font-weight: bold;
+	transform: translateY(-9px);
 }
 .content1_2_wrap{
+	margin-top: 50px;
+	margin-left: 24px;
 	width: 350px;
-	height: 400px;
+	height: 500px;
+	background-color: #f9fafb;
 }
+
+.top5_1_2{
+	margin-top: 10px;
+	padding-top: 15px;
+	width: 350px;
+	height: 45px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	background-color: #ff8d1e;
+}
+
 .content1_3_wrap{
+	margin-top: 50px;
+	margin-left: 24px;
 	width: 350px;
-	height: 400px;
+	height: 500px;
+	background-color: #f9fafb;
+	position: relative;
 }
-.content1_4_wrap{
+
+.chart1_title{
+	margin-top: 10px;
 	width: 350px;
-	height: 400px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#Chart1{
+	margin-top: 50px;
+	width: 300px;
+	height: 300px;
+}
+
+.chart1_time{
+	position: absolute;
+	top: 240px;
+	left: 135px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #1e90ff;
+	text-align: center;
+}
+
+.content1_4_wrap{
+	margin-top: 50px;
+	margin-left: 24px;
+	width: 350px;
+	height: 500px;
+	background-color: #f9fafb;
+	position: relative;
+}
+
+.chart2_title{
+	margin-top: 10px;
+	width: 350px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#Chart2{
+	margin-top: 50px;
+	width: 300px;
+	height: 300px;
+}
+
+.chart2_distance{
+	position: absolute;
+	top: 240px;
+	left: 110px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #1e90ff;
+	text-align: center;
 }
 
 .content_wrap2{
@@ -90,6 +211,6 @@ body{
 	background-color: #f9fafb;
 	z-index: 1;
 	border-top: 1px solid #b1b8c0;
-	display: none;
 	display: flex;
+	display: none;
 }
