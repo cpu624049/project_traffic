@@ -35,7 +35,7 @@ public class XmlParsingTest {
 
 				// 파싱할 tag
 				NodeList nList = doc.getElementsByTagName("row");
-//				System.out.println("파싱할 리스트 수 : "+ nList.getLength());
+				System.out.println("파싱할 리스트 수 : "+ nList.getLength());
 
 				for (int temp = 0; temp < nList.getLength(); temp++) {
 					Node nNode = nList.item(temp);
