@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.tech.traffic01.dao.Cat3Dao">
+	<resultMap type="com.tech.traffic01.dto.Cat3Dto1" id="Subway1">
+		<result column="ROWNUM" property="rownum" />
+		<result column="USE_DATE" property="useDate" />
+		<result column="STATION_NUM" property="stationNum" />
+		<result column="RIDE_PASSENGER_NUM" property="ridePassengerNum" />
+	</resultMap>
+	<select id="cat3Data1" resultType="com.tech.traffic01.dto.Cat3Dto1" resultMap="Subway1">
+		SELECT ROWNUM, USE_DATE, STATION_NUM, RIDE_PASSENGER_NUM
+		FROM (
+			SELECT USE_DATE, STATION_NUM, RIDE_PASSENGER_NUM
+			FROM SUBWAY_STAT
+			WHERE USE_DATE = TRUNC(SYSDATE) - 5
+			ORDER BY RIDE_PASSENGER_NUM DESC)
+		WHERE ROWNUM &lt; = 5
+	</select>
+	<resultMap type="com.tech.traffic01.dto.Cat3Dto2" id="Subway2">
+		<result column="ROWNUM" property="rownum" />
+		<result column="USE_DATE" property="useDate" />
+		<result column="STATION_NUM" property="stationNum" />
+		<result column="ALIGHT_PASSENGER_NUM" property="alightPassengerNum" />
+	</resultMap>
+	<select id="cat3Data2" resultType="com.tech.traffic01.dto.Cat3Dto2" resultMap="Subway2">
+		SELECT ROWNUM, USE_DATE, STATION_NUM, ALIGHT_PASSENGER_NUM
+		FROM (
+			SELECT USE_DATE, STATION_NUM, ALIGHT_PASSENGER_NUM
+			FROM SUBWAY_STAT
+			WHERE USE_DATE = TRUNC(SYSDATE) - 5
+			ORDER BY ALIGHT_PASSENGER_NUM DESC)
+		WHERE ROWNUM &lt; = 5
+	</select>
+	<resultMap type="com.tech.traffic01.dto.Cat3Dto3" id="Subway3">
+		<result column="ROWNUM" property="rownum" />
+		<result column="LINE_NUM" property="lineNum" />
+		<result column="TOTAL_RIDE_PASSENGER_NUM" property="totalNum" />
+	</resultMap>
+	<select id="cat3Data3" resultType="com.tech.traffic01.dto.Cat3Dto2" resultMap="Subway3">
+		SELECT ROWNUM, LINE_NUM, TOTAL_RIDE_PASSENGER_NUM
+		FROM (
+			SELECT LINE_NUM, SUM(RIDE_PASSENGER_NUM) AS TOTAL_RIDE_PASSENGER_NUM
+			FROM SUBWAY_STAT
+			WHERE USE_DATE = TRUNC(SYSDATE) - 5
+			GROUP BY LINE_NUM
+			ORDER BY TOTAL_RIDE_PASSENGER_NUM DESC)
+		WHERE ROWNUM &lt; = 5
+	</select>
+	<resultMap type="com.tech.traffic01.dto.Cat3Dto4" id="Subway4">
+		<result column="ROWNUM" property="rownum" />
+		<result column="LINE_NUM" property="lineNum" />
+		<result column="TOTAL_ALIGHT_PASSENGER_NUM" property="totalNum" />
+	</resultMap>
+	<select id="cat3Data4" resultType="com.tech.traffic01.dto.Cat3Dto2" resultMap="Subway4">
+		SELECT ROWNUM, LINE_NUM, TOTAL_ALIGHT_PASSENGER_NUM
+		FROM (
+			SELECT LINE_NUM, SUM(ALIGHT_PASSENGER_NUM) AS TOTAL_ALIGHT_PASSENGER_NUM
+			FROM SUBWAY_STAT
+			WHERE USE_DATE = TRUNC(SYSDATE) - 5
+			GROUP BY LINE_NUM
+			ORDER BY TOTAL_ALIGHT_PASSENGER_NUM DESC)
+		WHERE ROWNUM &lt; = 5
+	</select>
+</mapper>

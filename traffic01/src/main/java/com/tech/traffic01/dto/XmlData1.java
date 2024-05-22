@@ -15,6 +15,7 @@ public class XmlData1 {
     private String expClrDate;
     private String expClrTime;
     private String grs80tmX;
-    private String grs80tmY;
+    private String grs80tmY;    
     private String accInfo;
+    private String accType;
 }

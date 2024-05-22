@@ -45,6 +45,7 @@
 
 
 <!-- Script -->
+
 <script>
 	function toggleInfo(){
         var infoWrap = document.getElementById("InfoWrap");

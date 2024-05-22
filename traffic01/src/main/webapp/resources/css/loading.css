@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+#loading {
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   position: fixed;
+   display: block;
+   background-color: #fff;
+   z-index: 99;
+   text-align: center;
+}
+
+#loading-image {
+  position: absolute;
+  z-index: 100;
+  width:80vw; 
+  height: 40vw; 
+  margin-left:-40vw;
+}

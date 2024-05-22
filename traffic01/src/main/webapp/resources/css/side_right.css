@@ -40,8 +40,8 @@ body{
 
 .traffic_content{
 	margin-top: 10px;
-	width: 289px;
-    height: 110px;
+	width: 280px;
+    height: 180px;
 	border-bottom: 1px solid #b1b8c0;
     float: left;
 }
@@ -50,13 +50,27 @@ body{
 	font-size: 20px;
 	font-weight: bold;
 }
+
 .content_content{
 	clear: both;
-	margin-top: 5px;
+	margin-top: 15px;
 	font-size: 13px;
+    overflow: hidden;
+    display: -webkit-box;
+    word-wrap: break-word;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    height: 63px;
 }
-.content_time{
-	clear: both;
-	margin-top: 5px;
-	font-size: 13px;
+
+.time_1{
+	margin-top: 10px;
+	font-size: 15px;
+}
+
+.time_2{
+	margin-top: 10px;
+	font-size: 15px;
 }

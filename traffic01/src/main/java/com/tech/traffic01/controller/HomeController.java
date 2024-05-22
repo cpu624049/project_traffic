@@ -40,12 +40,6 @@ public class HomeController {
 		return "cat2";
 	}
 	
-	@RequestMapping(value = "/cat3", method = RequestMethod.GET)
-	public String cat3(HttpServletRequest request, Model model) {
-		
-		return "cat3";
-	}
-	
 	@RequestMapping(value = "/cat4", method = RequestMethod.GET)
 	public String cat4(HttpServletRequest request, Model model) {
 		

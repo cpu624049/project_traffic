@@ -14,14 +14,14 @@ body{
 	position: absolute;
 	top: 30px;
 	left: 400px;
-	width: 300px;
+	width: 500px;
 	height: 50px;
 	display: flex;
 }
 
 .button1{
 	padding-top: 10px;
-	width: 148px;
+	width: 248px;
 	height: 40px;
 	text-align: center;
 	background-color: #e2f0fe;
@@ -39,7 +39,7 @@ body{
 
 .button2{
 	padding-top: 10px;
-	width: 148px;
+	width: 248px;
 	height: 40px;
 	text-align: center;
 	background-color: #e2f0fe;
@@ -101,20 +101,24 @@ body{
 	font-size: 40px;
 	font-weight: bold;
 	display: flex;
+	position: relative;
 }
 
 .rank1_1_name{
-	margin-left: 10px;
-	font-size: 40px;
+	font-size: 20px;
 	font-weight: bold;
-	transform: translateY(-9px);
+	position: absolute;
+	top: 5px;
+	left: 80px;
 }
 
 .rank1_1_cnt{
-	margin-left: 60px;
-	font-size: 40px;
+	font-size: 30px;
 	font-weight: bold;
 	transform: translateY(-9px);
+	position: absolute;
+	top: 5px;
+	right: 10px;
 }
 .content1_2_wrap{
 	margin-top: 50px;
@@ -208,9 +212,18 @@ body{
 	left: 350px;
 	width: 1520px;
 	height: 600px;
-	background-color: #f9fafb;
+	background-color: #e2f0fe;
 	z-index: 1;
-	border-top: 1px solid #b1b8c0;
-	display: flex;
+	border: 1px solid #b1b8c0;
 	display: none;
+}
+
+#Chart3{
+	margin-top: 30px;
+	margin-left: 20px;
+}
+
+#Chart4{
+	margin-top: 30px;
+	margin-left: 20px;
 }

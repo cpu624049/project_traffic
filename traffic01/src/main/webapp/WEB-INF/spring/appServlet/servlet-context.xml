@@ -37,7 +37,7 @@
 
 	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />
-		<beans:property name="mapperLocations" value="classpath:com/tech/traffic01/*/dao/mapper/*.xml" />
+		<beans:property name="mapperLocations" value="classpath:com/tech/traffic01/dao/mapper/*.xml" />
 		<beans:property name="configuration">
 	        <beans:bean class="org.apache.ibatis.session.Configuration">
 	            <beans:property name="jdbcTypeForNull" value="VARCHAR"/>
@@ -50,7 +50,7 @@
 	</beans:bean>
 	
   	<beans:bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<beans:property name="basePackage" value="com.tech.traffic.*.dao.mapper" />
+		<beans:property name="basePackage" value="com.tech.traffic01.dao.mapper" />
 		<beans:property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</beans:bean>
 
@@ -76,7 +76,7 @@
 	</tx:advice>
 
 	<aop:config>
-		<aop:pointcut id="requiredTx" expression="execution(* com.tech.traffic.*.service.*.*(..))" />
+		<aop:pointcut id="requiredTx" expression="execution(* com.tech.traffic01.service.*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="requiredTx" />
 	</aop:config>
 
