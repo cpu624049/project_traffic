@@ -38,7 +38,7 @@
 	    			연령별 유출 인구
     			</div>
    				<div class="graph2">
-					<canvas id="Chart2" width="250" height="400"></canvas>
+					<canvas id="Chart2" width="250" height="330"></canvas>
    				</div>
     		</div>
     	</div>
