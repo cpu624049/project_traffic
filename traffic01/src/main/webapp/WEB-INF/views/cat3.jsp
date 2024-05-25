@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.2-web/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 	<link rel="stylesheet" href="resources/css/cat3.css">
     <title>Traffic Category 3</title>
 </head>
@@ -20,13 +20,13 @@
 	    <div class="content_wrap1">
 	    	<div class="content1_1_wrap">
 	    		<div class="title1_1">
-	    		<i class="fa-duotone fa-train-subway"></i>
+	    		<i class="fa-solid fa-train-subway"></i>
 	    		승차역
 	    		</div>
 	    		<div class="top5_1_1"> 1위 ~ 5위 </div>
 	    		<c:forEach items="${cat3Data1 }" var="subway1">
 		    		<div class="rank1_1">
-		    			<i class="fa-solid fa-square-${subway1.rownum }"></i>
+		    			<i class="fa-solid fa-${subway1.rownum }"></i>
 		    			<div class="rank1_1_name">
 		    			${subway1.stationNum }
 		    			</div>
@@ -38,13 +38,13 @@
 	    	</div>
 	    	<div class="content1_2_wrap">
 	    		<div class="title1_1">
-	    		<i class="fa-duotone fa-train-subway"></i>
+	    		<i class="fa-solid fa-train-subway"></i>
 	    		하차역
 	    		</div>
 	    		<div class="top5_1_2"> 1위 ~ 5위 </div>
 	    		<c:forEach items="${cat3Data2 }" var="subway2">
 		    		<div class="rank1_1">
-		    			<i class="fa-solid fa-square-${subway2.rownum }"></i>
+		    			<i class="fa-solid fa-${subway2.rownum }"></i>
 		    			<div class="rank1_1_name">
 		    			${subway2.stationNum }
 		    			</div>
@@ -68,13 +68,13 @@
  	    <div class="content_wrap2">
 	    	<div class="content1_1_wrap">
 	    		<div class="title1_1">
-	    		<i class="fa-duotone fa-bus"></i>
+	    		<i class="fa-solid fa-train-subway"></i>
 	    		승차 호선
 	    		</div>
 	    		<div class="top5_1_1"> 1위 ~ 5위 </div>
 	    		<c:forEach items="${cat3Data3 }" var="subway3">
 		    		<div class="rank1_1">
-		    			<i class="fa-solid fa-square-${subway3.rownum }"></i>
+		    			<i class="fa-solid fa-${subway3.rownum }"></i>
 		    			<div class="rank1_1_name">
 		    			${subway3.lineNum }
 		    			</div>
@@ -86,13 +86,13 @@
 	    	</div>
 	    	<div class="content1_2_wrap">
 	    		<div class="title1_1">
-	    		<i class="fa-duotone fa-bus"></i>
+	    		<i class="fa-solid fa-train-subway"></i>
 	    		하차 호선
 	    		</div>
 	    		<div class="top5_1_2"> 1위 ~ 5위 </div>
 	    		<c:forEach items="${cat3Data4 }" var="subway4">
 		    		<div class="rank1_1">
-		    			<i class="fa-solid fa-square-${subway4.rownum }"></i>
+		    			<i class="fa-solid fa-${subway4.rownum }"></i>
 		    			<div class="rank1_1_name">
 		    			${subway4.lineNum }
 		    			</div>

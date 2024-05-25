@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.tech.traffic01.dao.Cat2Dao">
+	<resultMap type="com.tech.traffic01.dto.Cat2Dto1" id="Departure">
+		<result column="GOO" property="goo" />
+		<result column="TOTAL_DEPARTURE_PASSENGER" property="totalDeparturePassenger" />
+	</resultMap>
+	<select id="cat2Data1" resultType="com.tech.traffic01.dto.Cat2Dto1" resultMap="Departure">
+		SELECT
+		    P2.GOO,
+		    SUM(P1.ALL_PASSENGER) AS TOTAL_DEPARTURE_PASSENGER
+		FROM
+		    POLYGON1 P1
+		JOIN
+		    POLYGON2 P2
+		ON
+		    P1.DEPARTURE_REGION = P2.DONG_NUM
+		GROUP BY
+		    P2.GOO_NUM,
+		    P2.GOO
+		ORDER BY
+		    P2.GOO_NUM
+	</select>
+	<resultMap type="com.tech.traffic01.dto.Cat2Dto2" id="Arrival">
+		<result column="GOO" property="goo" />
+		<result column="TOTAL_ARRIVAL_PASSENGER" property="totalArrivalPassenger" />
+	</resultMap>
+	<select id="cat2Data2" resultType="com.tech.traffic01.dto.Cat3Dto2" resultMap="Arrival">
+		SELECT
+		    P2.GOO,
+		    SUM(P1.ALL_PASSENGER) AS TOTAL_ARRIVAL_PASSENGER
+		FROM
+		    POLYGON1 P1
+		JOIN
+		    POLYGON2 P2
+		ON
+		    P1.ARRIVAL_REGION = P2.DONG_NUM
+		GROUP BY
+		    P2.GOO_NUM,
+		    P2.GOO
+		ORDER BY
+		    P2.GOO_NUM
+	</select>
+</mapper>

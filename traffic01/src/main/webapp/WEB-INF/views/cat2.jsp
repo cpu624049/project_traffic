@@ -16,7 +16,7 @@
 	<jsp:include page="layout/side_left.jsp" />
 
     <div id="map"></div>
-	    
+
 	<jsp:include page="layout/side_right_2.jsp" />
 </div>
 
@@ -182,20 +182,53 @@
 	        polygon.setOptions({fillColor: '#fff'});
 	        customOverlay.setMap(null);
 	    }); 
-
-	    // 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다 
-	    kakao.maps.event.addListener(polygon, 'click', function(mouseEvent) {
-	    	
-	        var content = '<div class="info">' + 
-	                    '   <div class="title">' + area.name + '</div>' +
-	                    '   <div class="size">총 면적 : 약 ' + Math.floor(polygon.getArea()) + ' m<sup>2</sup></div>' +
-	                    '</div>';
-
-	        infowindow.setContent(content); 
-	        infowindow.setPosition(mouseEvent.latLng); 
-	        infowindow.setMap(map);
-
-	    });
+	    
+	    var cat2Data1 = [];
+	    var cat2Data2 = [];
+	    
+		<c:forEach items="${cat2Data1 }" var="data1">
+			cat2Data1.push(['${data1.goo}','${data1.totalDeparturePassenger}']);
+		</c:forEach>
+		<c:forEach items="${cat2Data2 }" var="data2">
+			cat2Data2.push(['${data2.goo}','${data2.totalArrivalPassenger}']);
+		</c:forEach>
+		
+	    // cat2Data1을 출력 (예시로 콘솔에 출력)
+	    console.log(cat2Data1);
+	    
+		// 다각형에 click 이벤트를 등록하고 이벤트가 발생하면 다각형의 이름과 면적을 인포윈도우에 표시합니다 
+		kakao.maps.event.addListener(polygon, 'click', function(mouseEvent) {
+		    // area.name과 일치하는 goo를 찾기 위해 cat2Data1 배열을 순회합니다
+		    var totalDeparturePassenger = null;
+		    var totalArrivalPassenger = null;
+		
+		    for (var i = 0; i < cat2Data1.length; i++) {
+		        if (cat2Data1[i][0] === area.name) { // cat2Data1[i][0]은 goo를 의미합니다
+		            totalDeparturePassenger = cat2Data1[i][1]; // cat2Data1[i][1]은 totalDeparturePassenger를 의미합니다
+		            totalArrivalPassenger = cat2Data2[i][1]; // cat2Data1[i][1]은 totalArrivalPassenger를 의미합니다
+		            break;
+		        }
+		    }
+		
+		    var content;
+		    if (totalDeparturePassenger !== null) {
+		        content = '<div class="info">' + 
+		                    '<div class="info_area_name">' + area.name + '</div>' +
+		                    '<div class="info_tp"> 총 유출 인구 ' +
+		                    	'<div class="info_tp1">' + totalDeparturePassenger + '</div>' +
+                    		'</div>' +
+		                    '<div class="info_tp"> 총 유입 인구 ' +
+	                    		'<div class="info_tp2">' + totalDeparturePassenger + '</div>' +
+                   		 	'</div>' +
+		                  '</div>';
+		    }
+		
+		    infowindow.setContent(content); 
+		    infowindow.setPosition(mouseEvent.latLng); 
+		    infowindow.setMap(map);
+		    
+		});
+        
 	}
 	
 </script>

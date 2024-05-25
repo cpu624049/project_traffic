@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.ui.Model;
 
 import com.tech.traffic01.dao.Cat3Dao;
+import com.tech.traffic01.dto.Cat2Dto1;
+import com.tech.traffic01.dto.Cat2Dto2;
 import com.tech.traffic01.dto.Cat3Dto1;
 import com.tech.traffic01.dto.Cat3Dto2;
 import com.tech.traffic01.dto.Cat3Dto3;
@@ -35,5 +37,6 @@ public class Cat3Service implements DataService{
 		model.addAttribute("cat3Data2", cat3Data2);
 		model.addAttribute("cat3Data3", cat3Data3);
 		model.addAttribute("cat3Data4", cat3Data4);
+
 	}
 }

@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="resources/css/side_right_2.css">
-	<link href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.2-web/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
     	<div class="wrap1">
     		<div class="graph1_wrap">
     			<div class="graph1_title">
-    				<i class="fa-solid fa-location-check"></i>
+    				<i class="fa-solid fa-check"></i>
     				남여 유출 인구 비율
    				</div>
    				<div class="graph1">
@@ -34,55 +34,12 @@
     		</div>
     		<div class="graph2_wrap">
     			<div class="graph2_title">
-	    			<i class="fa-solid fa-location-check"></i>
+	    			<i class="fa-solid fa-check"></i>
 	    			연령별 유출 인구
     			</div>
    				<div class="graph2">
 					<canvas id="Chart2" width="250" height="400"></canvas>
    				</div>
-    		</div>
-    		<div class="graph3_wrap">
-    			<div class="graph3_title">
-	    			<i class="fa-solid fa-location-check"></i>
-	    			동별 유출인구 top5
-    			</div>
-    			<div class="graph3">
-    				<div class="content">
-    					<div class="content_name"> Top 1. 이름</div>
-    					<div class="content_cnt">
-    						<i class="fa-solid fa-person-arrow-up-from-line"></i>
-    						71,318
-    					</div>
-    				</div>
-    				<div class="content">
-    					<div class="content_name"> Top 2. 이름</div>
-    					<div class="content_cnt">
-    						<i class="fa-solid fa-person-arrow-up-from-line"></i>
-    						71,318
-    					</div>
-    				</div>
-    				<div class="content">
-    					<div class="content_name"> Top 3. 종로1·2·3·4가동 </div>
-    					<div class="content_cnt">
-    						<i class="fa-solid fa-person-arrow-up-from-line"></i>
-    						71,318
-    					</div>
-    				</div>
-    				<div class="content">
-    					<div class="content_name"> Top 4. 이름</div>
-    					<div class="content_cnt">
-    						<i class="fa-solid fa-person-arrow-up-from-line"></i>
-    						71,318
-    					</div>
-    				</div>
-    				<div class="content">
-    					<div class="content_name"> Top 5. 이름</div>
-    					<div class="content_cnt">
-    						<i class="fa-solid fa-person-arrow-up-from-line"></i>
-    						71,318
-    					</div>
-    				</div>
-    			</div>
     		</div>
     	</div>
     </div>
@@ -174,6 +131,19 @@
 	      document.getElementById('Chart2'),
 	      configNutri
 	  );
+</script>
+
+<script>
+	// JSP에서 전달된 JSON 문자열을 JavaScript 변수에 할당
+	var cat2Data1 = ${cat2Data1 };
+	var cat2Data2 = JSON.parse('${cat2Data2}');
+	// cat2Data1과 cat2Data2를 콘솔에 출력 (예시)
+	console.log(cat2Data1);
+	console.log(cat2Data2);
+	
+	// 로컬 스토리지에 cat2Data을 저장
+	localStorage.setItem('cat2Data1', JSON.stringify(cat2Data1));
+	localStorage.setItem('cat2Data2', JSON.stringify(cat2Data2));
 </script>
 </body>
 </html>

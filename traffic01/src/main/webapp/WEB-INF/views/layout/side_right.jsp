@@ -17,7 +17,7 @@
 	        	<c:forEach items="${xmlDataList1 }" var="xml1">
 		        	<div class="traffic_content">
 		        		<div class="content_title">
-		        			<i class="fa-solid fa-triangle-person-digging"></i>
+		        			<i class="fa-solid fa-circle-check"></i>
 		        			<c:set var="accTypeName" value="" />
 							<c:choose>
 								<c:when test="${xml1.accType eq 'A01'}">
@@ -73,7 +73,6 @@
 									<c:out value="${accTypeName }" />
 								</c:when>
 							</c:choose>
-		        			<i class="fa-duotone fa-traffic-cone"></i>
 		        		</div>
 		        		<div class="content_content">
 		        			${xml1.accInfo }

@@ -34,11 +34,47 @@ body{
 }
 
 .info {
-    font-size: 12px;
-    padding: 5px;
+	width: 200px;
+	height: 230px;
+    padding: 15px;
+    padding-left: 20px;
+    background-color: #e2f0fe;
+    border: 1px solid black;
+    z-index: 100;
 }
-.info .title {
+
+.info_area_name {
+	padding-bottom: 10px;
+	font-size: 20px;
     font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #b1b8c0;
+}
+
+.info_tp {
+	margin-top: 15px;
+	height: 70px;
+	padding-top: 10px;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	background-color: #f9fafb;
+}
+
+.info_tp1 {
+	margin-top: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	color: #ff8d1e;
+}
+
+.info_tp2 {
+	margin-top: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	color: #1e90ff;
 }
 
 .district{

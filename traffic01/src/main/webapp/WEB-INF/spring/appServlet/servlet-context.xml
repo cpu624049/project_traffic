@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+<beans:beans
+	xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -11,33 +12,45 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
-	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-	
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
+		in the /WEB-INF/views directory -->
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.tech.traffic01" />
-	
+
+	<context:component-scan
+		base-package="com.tech.traffic01" />
+		
+
 	<!-- mybatis setting -->
-	<beans:bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+	<beans:bean name="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<beans:property name="url"
+			value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="traffic" />
 		<beans:property name="password" value="123456" />
 	</beans:bean>
 
-	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<beans:bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />
-		<beans:property name="mapperLocations" value="classpath:com/tech/traffic01/dao/mapper/*.xml" />
+		<beans:property name="mapperLocations"
+			value="classpath:com/tech/traffic01/dao/mapper/*.xml" />
 		<beans:property name="configuration">
 	        <beans:bean class="org.apache.ibatis.session.Configuration">
 	            <beans:property name="jdbcTypeForNull" value="VARCHAR"/>
@@ -45,20 +58,29 @@
     	</beans:property>
 	</beans:bean>
 
-	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-		<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>
+	<beans:bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg index="0"
+			ref="sqlSessionFactory"></beans:constructor-arg>
+
+
 	</beans:bean>
 	
-  	<beans:bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<beans:property name="basePackage" value="com.tech.traffic01.dao.mapper" />
-		<beans:property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	<beans:bean
+		class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<beans:property name="basePackage"
+			value="com.tech.traffic01.dao" />
+		<beans:property name="sqlSessionFactoryBeanName"
+			value="sqlSessionFactory" />
 	</beans:bean>
 
 	<aop:aspectj-autoproxy />
 
 	<!-- tx setting -->
-	<tx:annotation-driven transaction-manager="txManager" />
-	<beans:bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	<tx:annotation-driven
+		transaction-manager="txManager" />
+	<beans:bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<beans:property name="dataSource" ref="dataSource"></beans:property>
 	</beans:bean>
 
@@ -71,18 +93,24 @@
 			<tx:method name="update*" rollback-for="Exception" />
 			<tx:method name="delete*" rollback-for="Exception" />
 			<tx:method name="save*" rollback-for="Exception" />
-			<tx:method name="process*" propagation="REQUIRES_NEW" rollback-for="Exception" />
+			<tx:method name="process*" propagation="REQUIRES_NEW"
+				rollback-for="Exception" />
 		</tx:attributes>
 	</tx:advice>
 
 	<aop:config>
-		<aop:pointcut id="requiredTx" expression="execution(* com.tech.traffic01.service.*.*(..))" />
-		<aop:advisor advice-ref="txAdvice" pointcut-ref="requiredTx" />
+		<aop:pointcut id="requiredTx"
+			expression="execution(* com.tech.traffic01.*.service.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="requiredTx" />
 	</aop:config>
 
 	<!-- 파일 업로드 설정 -->
-	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="maxUploadSize" value="104857600" />
 	</beans:bean>
-	
+
+
+
 </beans:beans>
